@@ -3,12 +3,6 @@
     runtime bundle/vim-pathogen/autoload/pathogen.vim
     call pathogen#infect()
     syntax on " syntax highlighting on
-    highlight ExtraWhitespace ctermbg=red
-    match ExtraWhitespace /\s\+$/
-    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-    autocmd BufWinLeave * call clearmatches()
 " }
 
 " General {
@@ -19,13 +13,19 @@
 "}
 
 " Vim UI {
-    set cursorcolumn " highlight the current column
     set cursorline " highlight current line
+    highlight cursorline ctermbg=red cterm=bold
+    highlight ExtraWhitespace ctermbg=red
+    match ExtraWhitespace /\s\+$/
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
     set incsearch "highlight the search phrase as you type
     set nohlsearch "highlight all matches
     set linespace=0 " don't insert any extra pixel lines betweens rows
     set list " we do what to show tabs, to ensure we get them out of my files
-    set listchars=tab:»»,trail:« "show tabs "		" and trailing spaces   
+    set listchars=tab:»», "show tabs "		" and trailing spaces   
     set laststatus=2 " always show the status line
     set number " turn on line numbers
     set numberwidth=5 " We are good up to 99999 lines
