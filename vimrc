@@ -13,8 +13,10 @@
 "}
 
 " Vim UI {
+    set background=light
+    colorscheme solarized
     set cursorline " highlight current line
-    highlight cursorline ctermbg=red cterm=bold
+    set cursorcolumn "highlight current column
     highlight ExtraWhitespace ctermbg=darkred
     highlight LineNr ctermbg=darkgray
     match ExtraWhitespace /\t\+\|\s\+$/
@@ -29,7 +31,7 @@
     set listchars=tab:»», "show tabs "		" and trailing spaces   
     set laststatus=2 " always show the status line
     set number " turn on line numbers
-    set numberwidth=5 " We are good up to 99999 lines
+    set numberwidth=4 " We are good up to 99999 lines
     set ruler " Always show current positions along the bottom
     set scrolloff=10 " Keep 10 lines (top/bottom) for scope
     set showcmd " show the command being typed
@@ -51,12 +53,11 @@
 
 " Text Formatting/Layout {
     set completeopt= " don't use a pop up menu for completions
-    set expandtab " no real tabs please!
     set ignorecase " case insensitive by default
     set infercase " case inferred by default
     set nowrap " do not wrap line
     set smartcase " if there are caps, go case-sensitive
+    set expandtab " no real tabs please!
     set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
-    set tabstop=4 " real tabs should be 8, and they will show with set list on
 " }
