@@ -15,11 +15,12 @@
 " Vim UI {
     set cursorline " highlight current line
     highlight cursorline ctermbg=red cterm=bold
-    highlight ExtraWhitespace ctermbg=red
-    match ExtraWhitespace /\s\+$/
-    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    highlight ExtraWhitespace ctermbg=darkred
+    highlight LineNr ctermbg=darkgray
+    match ExtraWhitespace /\t\+\|\s\+$/
+    autocmd BufWinEnter * match ExtraWhitespace /\t\+\|\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\t\+\|\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\t\+\|\s\+$/
     autocmd BufWinLeave * call clearmatches()
     set incsearch "highlight the search phrase as you type
     set nohlsearch "highlight all matches
