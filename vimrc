@@ -17,7 +17,7 @@
     colorscheme solarized
     set cursorline " highlight current line
     set cursorcolumn "highlight current column
-    highlight ExtraWhitespace ctermbg=darkred
+    highlight ExtraWhitespace ctermbg=darkred ctermfg=white guibg=darkred guifg=white
     highlight LineNr ctermbg=darkgray
     match ExtraWhitespace /\t\+\|\s\+$/
     autocmd BufWinEnter * match ExtraWhitespace /\t\+\|\s\+$/
@@ -28,7 +28,7 @@
     set nohlsearch "highlight all matches
     set linespace=0 " don't insert any extra pixel lines betweens rows
     set list " we do what to show tabs, to ensure we get them out of my files
-    set listchars=tab:»», "show tabs "		" and trailing spaces   
+    set listchars=tab:◆◆, "show tabs '		' and trailing spaces   
     set laststatus=2 " always show the status line
     set number " turn on line numbers
     set numberwidth=4 " We are good up to 99999 lines
