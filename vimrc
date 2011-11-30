@@ -18,10 +18,9 @@
     highlight cursorline ctermbg=red cterm=bold
     highlight ExtraWhitespace ctermbg=darkred ctermfg=white guibg=darkred guifg=white
     highlight LineNr ctermbg=darkgray
-    match ExtraWhitespace /\t\+\|\s\+$/
-    autocmd BufWinEnter * match ExtraWhitespace /\t\+\|\s\+$/
-    autocmd InsertEnter * match ExtraWhitespace /\t\+\|\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\t\+\|\s\+$/
+    autocmd BufWinEnter * if &filetype != 'help' | match ExtraWhitespace /\t\+\|\s\+$/ | endif
+    autocmd InsertEnter * if &filetype != 'help' | match ExtraWhitespace /\t\+\|\s\+\%#\@<!$/ | endif
+    autocmd InsertLeave * if &filetype != 'help' | match ExtraWhitespace /\t\+\|\s\+$/ | endif
     autocmd BufWinLeave * call clearmatches()
     set incsearch "highlight the search phrase as you type
     set nohlsearch "highlight all matches
