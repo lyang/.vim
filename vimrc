@@ -13,10 +13,9 @@
 "}
 
 " Vim UI {
-    set background=light
-    colorscheme solarized
+    set background=dark
     set cursorline " highlight current line
-    set cursorcolumn "highlight current column
+    highlight cursorline ctermbg=red cterm=bold
     highlight ExtraWhitespace ctermbg=darkred ctermfg=white guibg=darkred guifg=white
     highlight LineNr ctermbg=darkgray
     match ExtraWhitespace /\t\+\|\s\+$/
