@@ -1,8 +1,15 @@
 " Basics {
     set nocompatible " explicitly get out of vi-compatible mode
-    runtime bundle/vim-pathogen/autoload/pathogen.vim
-    call pathogen#infect()
     syntax on " syntax highlighting on
+" }
+
+" Vundle {
+    filetype off              " required
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    Plugin 'gmarik/Vundle.vim'
+    call vundle#end()         " required
+    filetype plugin indent on " required
 " }
 
 " General {
@@ -26,7 +33,7 @@
     set nohlsearch "highlight all matches
     set linespace=0 " don't insert any extra pixel lines betweens rows
     set list " we do what to show tabs, to ensure we get them out of my files
-    set listchars=tab:◆◆, "show tabs '		' and trailing spaces   
+    set listchars=tab:◆◆, "show tabs '		' and trailing spaces
     set laststatus=2 " always show the status line
     set number " turn on line numbers
     set numberwidth=4 " We are good up to 99999 lines
