@@ -8,8 +8,15 @@
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-endwise'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-rails'
+    Plugin 'wincent/command-t'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'elixir-lang/vim-elixir'
     call vundle#end()         " required
-    filetype plugin indent on " required
 " }
 
 " General {
@@ -21,8 +28,6 @@
 
 " Vim UI {
     set background=dark
-    set cursorline " highlight current line
-    highlight cursorline ctermbg=red cterm=bold
     highlight ExtraWhitespace ctermbg=darkred ctermfg=white guibg=darkred guifg=white
     highlight LineNr ctermbg=darkgray
     autocmd BufWinEnter * if &filetype != 'help' | match ExtraWhitespace /\t\+\|\s\+$/ | endif
@@ -33,7 +38,7 @@
     set nohlsearch "highlight all matches
     set linespace=0 " don't insert any extra pixel lines betweens rows
     set list " we do what to show tabs, to ensure we get them out of my files
-    set listchars=tab:◆◆, "show tabs '		' and trailing spaces
+    set listchars=tab:◆◆, "show tabs '		' and trailing spaces  
     set laststatus=2 " always show the status line
     set number " turn on line numbers
     set numberwidth=4 " We are good up to 99999 lines
@@ -41,14 +46,15 @@
     set scrolloff=10 " Keep 10 lines (top/bottom) for scope
     set showcmd " show the command being typed
     set showmatch " show matching brackets
-    set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%l,%v]
-    "              | | | | |  |   |      |  |     |    |
-    "              | | | | |  |   |      |  |     |    +-- current column
-    "              | | | | |  |   |      |  |     +-- current line
-    "              | | | | |  |   |      |  +-- current % into file
-    "              | | | | |  |   |      +-- current syntax in square brackets
-    "              | | | | |  |   +-- current fileformat
-    "              | | | | |  +-- number of lines
+    set statusline=%F%m%r%h%w%=[%L][%{&ff}]%y[%p%%][%l,%v]
+    "              | | | | | |  |   |      |  |     |    |
+    "              | | | | | |  |   |      |  |     |    +-- current column
+    "              | | | | | |  |   |      |  |     +-- current line
+    "              | | | | | |  |   |      |  +-- current % into file
+    "              | | | | | |  |   |      +-- current syntax in square brackets
+    "              | | | | | |  |   +-- current fileformat
+    "              | | | | | |  +-- number of lines
+    "              | | | | | +-- right align
     "              | | | | +-- preview flag in square brackets
     "              | | | +-- help flag in square brackets
     "              | | +-- readonly flag in square brackets
@@ -65,4 +71,14 @@
     set expandtab " no real tabs please!
     set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
+" }
+
+" Vimrc {
+    autocmd BufWritePost vimrc source %
+" }
+
+" NERDTree {
+  map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+  map <silent> <LocalLeader>nr :NERDTree<CR>
+  map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 " }
