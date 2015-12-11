@@ -16,6 +16,8 @@
     Plugin 'scrooloose/nerdtree'
     Plugin 'scrooloose/syntastic'
     Plugin 'elixir-lang/vim-elixir'
+    Plugin 'tmux-plugins/vim-tmux'
+    Plugin 'altercation/vim-colors-solarized'
     call vundle#end()         " required
 " }
 
