@@ -7,17 +7,21 @@
     filetype off              " required
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
-    Plugin 'gmarik/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'tpope/vim-endwise'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-rails'
-    Plugin 'wincent/command-t'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'elixir-lang/vim-elixir'
-    Plugin 'tmux-plugins/vim-tmux'
     Plugin 'altercation/vim-colors-solarized'
+    Plugin 'chr4/nginx.vim'
+    Plugin 'dense-analysis/ale'
+    Plugin 'elixir-lang/vim-elixir'
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'tmux-plugins/vim-tmux'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-endwise'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-rails'
+    Plugin 'tpope/vim-surround'
+    Plugin 'vim-ruby/vim-ruby'
+    Plugin 'vim-test/vim-test'
+    Plugin 'wincent/command-t'
     call vundle#end()         " required
 " }
 
