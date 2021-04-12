@@ -7,6 +7,7 @@
     filetype off              " required
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
+    Plugin 'airblade/vim-gitgutter'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'chr4/nginx.vim'
     Plugin 'dense-analysis/ale'
