@@ -1,6 +1,7 @@
-" Basics {
-    set nocompatible " explicitly get out of vi-compatible mode
-    syntax on " syntax highlighting on
+﻿" Basics {
+    set nocompatible   " explicitly get out of vi-compatible mode
+    syntax on          " syntax highlighting on
+    set updatetime=200 " faster refresh time
 " }
 
 " Vundle {
