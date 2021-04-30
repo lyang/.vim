@@ -4,29 +4,36 @@
     set updatetime=200 " faster refresh time
 " }
 
-" Vundle {
-    filetype off              " required
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'chr4/nginx.vim'
-    Plugin 'dense-analysis/ale'
-    Plugin 'elixir-lang/vim-elixir'
-    Plugin 'gmarik/Vundle.vim'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'tmux-plugins/vim-tmux'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-endwise'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'tpope/vim-projectionist'
-    Plugin 'tpope/vim-rails'
-    Plugin 'tpope/vim-rake'
-    Plugin 'tpope/vim-surround'
-    Plugin 'vim-ruby/vim-ruby'
-    Plugin 'vim-test/vim-test'
-    Plugin 'wincent/command-t'
-    call vundle#end()         " required
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+" vim-plug {
+    call plug#begin('~/.vim/plugged')
+    Plug 'airblade/vim-gitgutter'
+    Plug 'chr4/nginx.vim'
+    Plug 'dense-analysis/ale'
+    Plug 'elixir-lang/vim-elixir'
+    Plug 'scrooloose/nerdtree'
+    Plug 'tmux-plugins/vim-tmux'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-endwise'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-projectionist'
+    Plug 'tpope/vim-rails'
+    Plug 'tpope/vim-rake'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'vim-test/vim-test'
+    Plug 'wincent/command-t', { 'dir': '~/.vim/plugged/command-t', 'do': 'rake make' }
+    call plug#end()         " required
 " }
 
 " General {
