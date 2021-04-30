@@ -30,6 +30,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     Plug 'tpope/vim-rails'
     Plug 'tpope/vim-rake'
     Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'
     Plug 'vim-ruby/vim-ruby'
     Plug 'vim-test/vim-test'
     Plug 'wincent/command-t', { 'dir': '~/.vim/plugged/command-t', 'do': 'rake make' }
@@ -63,20 +64,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     set scrolloff=10 " Keep 10 lines (top/bottom) for scope
     set showcmd " show the command being typed
     set showmatch " show matching brackets
-    set statusline=%F%m%r%h%w%=[%L][%{&ff}]%y[%p%%][%l,%v]
-    "              | | | | | |  |   |      |  |     |    |
-    "              | | | | | |  |   |      |  |     |    +-- current column
-    "              | | | | | |  |   |      |  |     +-- current line
-    "              | | | | | |  |   |      |  +-- current % into file
-    "              | | | | | |  |   |      +-- current syntax in square brackets
-    "              | | | | | |  |   +-- current fileformat
-    "              | | | | | |  +-- number of lines
-    "              | | | | | +-- right align
-    "              | | | | +-- preview flag in square brackets
-    "              | | | +-- help flag in square brackets
-    "              | | +-- readonly flag in square brackets
-    "              | +-- rodified flag in square brackets
-    "              +-- full path to file in the buffer
 "}
 
 " Text Formatting/Layout {
