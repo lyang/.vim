@@ -75,6 +75,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     set expandtab " no real tabs please!
     set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
+    let g:airline_powerline_fonts = 1
 " }
 
 " Vimrc {
