@@ -42,6 +42,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     set autochdir " always switch to the current file directory
     set fileformats=unix,mac,dos " support all three, in this order
     set directory=~/.vim/tmp " directory to place swap files in
+    set undodir=~/.vim/undo
 "}
 
 " Vim UI {
