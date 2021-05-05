@@ -41,8 +41,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " General {
     filetype plugin indent on " load filetype plugins/indent settings
     set autochdir " always switch to the current file directory
-    set fileformats=unix,mac,dos " support all three, in this order
     set directory=~/.vim/tmp " directory to place swap files in
+    set fileformats=unix,mac,dos " support all three, in this order
     set undodir=~/.vim/undo
 "}
 
@@ -77,6 +77,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     set expandtab " no real tabs please!
     set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
+" }
+
+" autoread {
+    set autoread
+    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
 " }
 
 " Vimrc {
