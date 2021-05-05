@@ -76,7 +76,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     set expandtab " no real tabs please!
     set shiftwidth=2 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=2 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
-    let g:airline_powerline_fonts = 1
 " }
 
 " Vimrc {
@@ -84,7 +83,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " }
 
 " NERDTree {
-  map <silent> <LocalLeader>nf :NERDTreeFind<CR>
-  map <silent> <LocalLeader>nr :NERDTree<CR>
-  map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+    map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+    map <silent> <LocalLeader>nr :NERDTree<CR>
+    map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+" }
+
+" vim-airline {
+    let g:airline_powerline_fonts = 1
 " }
